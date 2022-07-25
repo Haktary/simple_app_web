@@ -4,22 +4,26 @@
 Pour le bon fonctionnement de l'application il faut mettre un fichier .htaccess comme ci-dessous pour rediriger les requêtes pour le bon fonctionnement du routing ! 
 </p>
 
-<code>
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
+```
+RewriteEngine On 
+RewriteBase /  
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteCond %{REQUEST_FILENAME} !-f  
 
-RewriteRule ^.*$ /simple_app_web/index.php [QSA,L]
-</code>
+RewriteRule ^.*$ /simple_app_web/index.php [QSA,L] 
+```
 
-<p>
-	http://localhost/form <br/>
-	http://localhost/message <br/>
-	http://localhost/message/?id=[id] <br/>
-	Mon dossier de git est comme ceci : <br/>
-	http://localhost/simple_app_web <br>
-	Le .htaccess est ici :<br/>
-	http://localhost/.htaccess <br/>
-</p>
-
+<p>Pour utiliser l'api : </p>
+<ul>
+  <li>http://localhost/form </li>
+  <li>http://localhost/message</li>
+  <li>http://localhost/message/?id=[id]</li>
+</ul>
+<p>Mon dossier de git est comme ceci : </p>
+<ul>
+  <li>http://localhost/simple_app_web</li>
+</ul>
+<p>Le .htaccess est ici :</p>
+<ul>
+  <li>http://localhost/.htaccess</li>
+</ul>

@@ -19,29 +19,26 @@
 		</div>
 	</header>
 	<main>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script>
-	    $(document).ready(function () {
-			$("#Save").click(function () {
-			    var person = new Object();
-			    data_message.nom = $('#nom').val();
-			    data_message.email = $('#email').val();
-			    data_message.tel = $('#tel').val();
-			    data_message.message = $('#message').val();
-			    $.ajax({
-					url: 'http://localhost/message',
-					type: 'POST',
-					dataType: 'json',
-					data: data_message,
-					success: function (data, textStatus,xhr) {
-					    console.log(data);
-					},
-					error: function (xhr, textStatus, errorThrown) 
-					{
-					    console.log('Error in Operation');
-					}
-		    	});
-			});
-	    });
+	    $(function () {
+
+	        $('form').on('submit', function (e) {
+
+	          e.preventDefault();
+
+	          $.ajax({
+	            type: 'post',
+	            url: 'http://localhost/form',
+	            data: $('form').serialize(),
+	            success: function () {
+	              alert('form was submitted');
+	            }
+	          });
+
+	        });
+
+      	});
 	</script>
 		<!-- <div class="form-ok">Pour votre message de validation de formulaire</div> -->
 		<!-- <div class="form-error">Pour votre message d'erreur</div> -->

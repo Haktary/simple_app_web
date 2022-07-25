@@ -3,6 +3,7 @@
   {
     global $conn;
     $nom = $_POST["nom"];
+    echo $nom;
     $email = $_POST["email"];
     $tel = $_POST["tel"];
     $message = $_POST["message"];
