@@ -5,12 +5,12 @@ Pour le bon fonctionnement de l'application il faut mettre un fichier .htaccess 
 </p>
 
 ```
-RewriteEngine On  <br/>
-RewriteBase /  <br/>
-RewriteCond %{REQUEST_FILENAME} !-d  <br/>
-RewriteCond %{REQUEST_FILENAME} !-f  <br/>
+RewriteEngine On 
+RewriteBase /  
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteCond %{REQUEST_FILENAME} !-f  
 
-RewriteRule ^.*$ /simple_app_web/index.php [QSA,L]  <br/>
+RewriteRule ^.*$ /simple_app_web/index.php [QSA,L] 
 ```
 
 <p>
