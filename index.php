@@ -2,6 +2,7 @@
 
 include("db_connect.php");
 include("views/message.php");
+include("views/add_message.php");
 $request_method = $_SERVER["REQUEST_METHOD"];
 $request_uri = $_SERVER['REQUEST_URI'];
 
@@ -23,10 +24,16 @@ switch ($request_method) {
         }
         
     case 'POST' :
-        if ($request_uri == 'form') {
+        if ($request_uri == '/form') {
             require __DIR__ . '/views/form.php';
             break;
         }
+        if ($request_uri == '/message') {
+
+            add_message();
+            break;
+        }
+        
 
     default:
         // Requête invalide
