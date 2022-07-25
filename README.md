@@ -14,6 +14,7 @@ RewriteRule ^.*$ /simple_app_web/index.php [QSA,L]
 ```
 
 <p>
+	Pour utiliser l'api : <br/>
 	http://localhost/form <br/>
 	http://localhost/message <br/>
 	http://localhost/message/?id=[id] <br/>
