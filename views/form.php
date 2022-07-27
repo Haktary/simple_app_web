@@ -19,30 +19,11 @@
 		</div>
 	</header>
 	<main>
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	<script>
-	    $(function () {
-
-	        $('form').on('submit', function (e) {
-
-	          e.preventDefault();
-
-	          $.ajax({
-	            type: 'post',
-	            url: 'http://localhost/form',
-	            data: $('form').serialize(),
-	            success: function () {
-	              alert('form was submitted');
-	            }
-	          });
-
-	        });
-
-      	});
-	</script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		
 		<!-- <div class="form-ok">Pour votre message de validation de formulaire</div> -->
 		<!-- <div class="form-error">Pour votre message d'erreur</div> -->
-		<form method="post">
+		<form method="post" id='myForm'>
 			<p>Contactez-nous</p>
 			<div class="form-part-1">
 				<div class="form-control">
@@ -61,7 +42,22 @@
 				</div>
 				<input type="submit" value="Envoyer" />
 			</div>
+			<div id="res"></div>
 		</form>
+		<script>
+			$("#myForm").submit(function(e){
+			  e.preventDefault(); //empêcher une action par défaut
+			  var form_data = $(this).serialize(); //Encoder les éléments du formulaire pour la soumission
+			  console.log(form_data);
+			  $.ajax({
+			    url : "/message",
+			    type: "POST",
+			    data : form_data
+			  }).done(function(response){ 
+			    $("#res").html(response);
+			  });
+			});
+		</script>
 	</main>
 	<footer>
 		<p>© Bulko - 2017<br>🦄  GLHF</p>
