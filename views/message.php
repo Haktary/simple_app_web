@@ -1,5 +1,5 @@
 <?php
-	function getMessage($id) {
+	function getMessage($id=0) {
 
 		global $conn;
 

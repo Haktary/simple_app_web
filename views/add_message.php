@@ -36,6 +36,12 @@ function add_message()
     $stmt->bind_param("ssss", $nom, $email, $tel, $message);
     
     if ($stmt->execute()) {
+      // config your server smtp 
+      $to = "info@bulko.net";
+      $subject = "receive message";
+      $txt = $nom . $email . $tel . $message ; 
+      $headers = "From: webmaster@example.com";
+      $mail = mail($to,$subject,$txt,$headers);
       $stmt->close();
       $response=array(
         'status' => 1,
