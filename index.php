@@ -6,7 +6,7 @@ include("views/add_message.php");
 $request_method = $_SERVER["REQUEST_METHOD"];
 $request_uri = $_SERVER['REQUEST_URI'];
 
-$my_uri = str_split($request_uri, 13);
+$my_uri = str_split($request_uri, 9);
 
 switch ($request_method) {
     case 'GET' :
@@ -18,8 +18,8 @@ switch ($request_method) {
             getMessage();
             break;
         }
-        if ($my_uri[0] == '/message/?id=') {
-            getMessage($_GET["id"]);
+        if ($my_uri[0] == '/message/') {
+            getMessage($my_uri[1]);
             break;
         }
         
@@ -27,12 +27,12 @@ switch ($request_method) {
         if ($request_uri == '/form') {
             require __DIR__ . '/views/form.php';
             break;
-        }
-        if ($request_uri == '/message') {
+        } if ($request_uri == '/message') {
 
             add_message();
             break;
         }
+
         
 
     default:
