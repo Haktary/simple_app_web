@@ -17,7 +17,7 @@ RewriteRule ^.*$ /simple_app_web/index.php [QSA,L]
 <ul>
   <li>http://localhost/form </li>
   <li>http://localhost/message</li>
-  <li>http://localhost/message/?id=[id]</li>
+  <li>http://localhost/message/[id]</li>
 </ul>
 <p>Mon dossier de git est comme ceci : </p>
 <ul>
